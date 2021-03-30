@@ -1,1 +1,5 @@
 # TimeSeriesDataPredictions
+
+Description: We have log files with schema timestamp, Memory Allocated, Memory Used, CPU Allocated, CPU Used, Network bandwidth utilization, Storage space utilization. Log files are divided with group id and instance.  Log files are created on Timestamp as per group id and instances and we have to predict next log file depend on previous log history.
+
+Proposed solution: We get the log file as input to our system and convert it into dataframe and perform data cleaning process like remove unwanted character and then transform into the above schema and store it into one dataframe for the prediction purpose. We use Dickey-Fuller Test (Autoregressive Model) for see the data is stationary or trend-stationary. Now we use ARIMA (Autoregressive Integrated Moving Average) to predict next log data. This model is mostly used for Time series data. After getting predicted log data insert into the new one data frame and convert it into the .log files as per Group id and Instance.
